@@ -1,0 +1,283 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+    --background: #faf6f1;
+    --cream: #fffdf9;
+    --pink: #d9a5a9;
+    --pink-dark: #b97882;
+    --gold: #b99a62;
+    --text: #594b49;
+    --muted: #998985;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background:
+        radial-gradient(circle at 15% 20%, #ead5d1 0, transparent 30%),
+        radial-gradient(circle at 85% 75%, #eadbc5 0, transparent 32%);
+}
+
+.topbar {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 7%;
+    border-bottom: 1px solid rgba(185, 154, 98, 0.16);
+}
+
+.brand {
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: var(--pink-dark);
+}
+
+.anniversary {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold);
+}
+
+.home {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 55px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    animation: appear 1.2s ease both;
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    font-weight: 500;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 8vw, 82px);
+    line-height: 0.98;
+    font-weight: 500;
+    margin: 25px 0;
+    color: #655451;
+}
+
+h1 span {
+    color: var(--pink-dark);
+    font-style: italic;
+}
+
+.heart-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: var(--gold);
+    font-size: 19px;
+    margin: 25px 0;
+}
+
+.heart-divider span {
+    width: 55px;
+    height: 1px;
+    background: #d9c7a6;
+}
+
+.hero-description {
+    max-width: 390px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--muted);
+    font-weight: 300;
+}
+
+.anniversary-card {
+    width: 215px;
+    margin: 38px auto;
+    padding: 25px 15px;
+    background: rgba(255, 253, 249, 0.85);
+    border: 1px solid #e9ddcb;
+    border-radius: 4px;
+    box-shadow: 0 15px 45px rgba(100, 75, 60, 0.07);
+}
+
+.card-label {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--gold);
+}
+
+.card-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 76px;
+    line-height: 1.1;
+    color: var(--pink-dark);
+}
+
+.card-months {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--text);
+}
+
+.card-date {
+    margin-top: 15px;
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+.start-button {
+    border: none;
+    padding: 17px 30px;
+    background: var(--pink-dark);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 22px rgba(185, 120, 130, 0.2);
+}
+
+.start-button span {
+    margin-left: 15px;
+}
+
+.start-button:hover {
+    background: #a96772;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(185, 120, 130, 0.3);
+}
+
+.bottom-message {
+    margin-top: 45px;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #bba99d;
+}
+
+footer {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    text-align: center;
+    font-size: 10px;
+    color: #b6a6a0;
+    letter-spacing: 1px;
+}
+
+.hero-decoration {
+    position: absolute;
+    top: 12%;
+    right: 15%;
+    color: #d8bd91;
+    font-size: 30px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.background-hearts {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -30px;
+    color: #d9a5a9;
+    opacity: 0.35;
+    animation: rise linear forwards;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .topbar {
+        padding: 22px 5%;
+    }
+
+    .brand {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .anniversary {
+        font-size: 8px;
+    }
+
+    .home {
+        padding: 45px 18px;
+    }
+
+    .hero-decoration {
+        right: 8%;
+        top: 8%;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+}
